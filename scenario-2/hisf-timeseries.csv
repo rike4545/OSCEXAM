@@ -1,0 +1,8 @@
+period,reported_assets_usd_m,unreported_liabilities_usd_m,reconstructed_balance_usd_m,notes
+FY2019,1587.618997,0,1587.618997,Audit Table XV
+FY2020,1369.639296,293.998964,1075.640332,Audit Table XV
+FY2021,1031.828433,949.798433,82.030000,Audit Table XV
+FY2022,900.035312,1868.652689,-968.617377,Audit Table XV
+FY2023,995.045887,2906.294206,-1911.248319,Audit Table XV
+FY2024,842.950631,2906.294206,-2063.343575,Excludes FY2024 equalization amounts not yet calculated
+April2025,1023.814853,3115.079880,-2091.265027,Excludes FY2024 equalization amounts not yet calculated

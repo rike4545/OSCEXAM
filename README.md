@@ -6,6 +6,8 @@ Private working portfolio for the senior municipal financial analyst assessment.
 
 - [Scenario 1 — Fringe Benefits](scenario-1/README.md): methodology and reproducible Excel workbook builder for the three-year object-code pivot analysis.
 - [Scenario 2 — Health Benefits Agreement](scenario-2/briefing.md): concise executive briefing on the NYC/MLC FY 2019–2021 agreement.
+- [Scenario 2 — Time-Series Addendum](scenario-2/time-series-analysis.md): post-agreement HISF financial trend, FY 2025 audit findings, and FY 2026 ACFR updates.
+- [HISF Time-Series Data](scenario-2/hisf-timeseries.csv): audit-reconstructed fund balance observations.
 - [Written Interview Responses](interview/written-responses.md): sample responses grounded in the candidate's documented experience.
 - [Sources and assumptions](SOURCES.md): source links, analytical definitions, and limitations.
 
