@@ -22,3 +22,10 @@ The Scenario 1 script uses Python, pandas, and openpyxl. It produces a formatted
 ## Confidentiality
 
 This repository is private. Keep source financial records and any non-public employment or interview materials private. Before sharing the assessment, review the final workbook and remove any information not intended for the recipient.
+
+
+## Public NYC data extraction
+
+Scenario 2 now includes a reproducible, read-only NYC Open Data retrieval pipeline. See [Public data extraction](scenario-2/public-data/README.md). It downloads object-code 062 budget records, agency-level actuals, funding-source actuals, central fringe-benefit allocations, and OMB financial-plan initiatives, along with each dataset's metadata and a run manifest.
+
+**Important scope control:** object-code 062 is budget detail, not actual expenditure. The public agency actuals dataset is not health-insurance-specific, and total fringe-benefit allocations are broader than health insurance. The pipeline preserves those distinctions rather than creating a misleading actual health-insurance series.
