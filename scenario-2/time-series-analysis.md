@@ -79,3 +79,38 @@ The agreement's equalization-offset mechanism could reduce the City's transfer o
 3. NYC Comptroller, *Annual Comprehensive Financial Report for Fiscal Years Ended June 30, 2026 and 2025*, issued Oct. 30, 2026: https://comptroller.nyc.gov/wp-content/uploads/documents/ACFR-2026.pdf
 4. NYC Comptroller, *Annual State of the City's Economy and Finances 2025*, Dec. 15, 2025: https://comptroller.nyc.gov/reports/annual-state-of-the-citys-economy-and-finances-2025/
 5. NYC Office of Labor Relations, *Health Benefits Agreement — Fiscal Years 2019–2021*: https://www.nyc.gov/assets/olr/downloads/pdf/collectivebargaining/health-benefits-agreement-fiscal-years-2019-2021.pdf
+
+
+## 6. OLR's official FY2019–FY2021 savings report: what the City counted
+
+The Office of Labor Relations' December 27, 2021 *Final Report on FY 19–FY 21 Health Care Savings* is the City's own published accounting of the initial agreement period. OLR states that the City and MLC met the $1.1 billion three-year target. Its attached schedule reports $1.217 billion in gross savings, less $59 million above the FY2021 $600 million cap, for $1.158 billion credited toward the target.
+
+| Reported component | FY2019–FY2021 |
+|---|---:|
+| Rollover savings from FY2015–FY2018 agreement | $205M |
+| HIP HMO rate savings | $701M |
+| Senior Care plan rate savings, net | $19M |
+| WIN Fertility | $28M |
+| Site-of-service / infusion / surgical site-of-care | $15M |
+| Empire length-of-stay management | $134M |
+| Centers of Excellence in CBP | -$1.2M |
+| Emblem drug changes | $117M |
+| **Gross total reported by OLR** | **$1,217M** |
+| Less amount above FY2021 $600M cap | **-$59M** |
+| **Adjusted amount credited toward FY2019–FY2021 target** | **$1,158M** |
+
+OLR's table reports $193 million in FY2019, $365 million in FY2020, and $600 million in FY2021 after the cap. OLR also explains that the HIP HMO rate savings were calculated from the difference between budgeted and finalized premium-rate increases, with the differential described as an amount that otherwise would have been paid by the City into the Stabilization Fund. This is important: the $701 million HIP rate component is not presented as a direct reduction in paid medical claims. It is a counterfactual premium-rate/equalization calculation.
+
+The report separately says the proposed retiree Medicare Advantage program was expected to save about $600 million annually for HISF, and explicitly says those savings were earmarked for the Fund and did not count toward the $1.1 billion agreement target.
+
+### What the OLR report establishes—and what it does not
+
+- It establishes that OLR publicly **reported** that the City and MLC met the $1.1 billion cumulative FY2019–FY2021 target.
+- It provides a component-level schedule and identifies the calculation logic for the major premium-rate component.
+- It does **not**, by itself, independently validate the actuarial assumptions, quantify all counterfactual risk, or demonstrate that $600 million in savings persisted on a recurring basis in every year after FY2021.
+- The 2018 agreement required the $600 million annual amount after FY2021 to be recurring and agreed within FY2021. The OLR report's adjusted FY2021 total of $600 million should not automatically be treated as proof that the recurring post-FY2021 condition was satisfied.
+- The report notes that CBP rates exceeded HIP rates in FY2021 and FY2022, accelerating the expected decline in HISF, and that future CBP-derived savings depended on offsets to HISF assets.
+
+This makes the OLR report a key primary source for the City's compliance claim, but the separate recurring-savings question still requires post-FY2021 actuarial support and reconciliation to actual plan costs, equalization payments, offsets, and Fund liabilities.
+
+Source: NYC Office of Labor Relations, *Final Report on FY 19–FY 21 Health Care Savings*, Dec. 27, 2021: https://www.nyc.gov/assets/olr/downloads/pdf/collectivebargaining/savings-report-12-27-21.pdf
