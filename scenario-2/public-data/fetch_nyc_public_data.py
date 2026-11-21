@@ -109,6 +109,55 @@ def write_csv(path: Path, rows):
         writer.writerows(rows)
 
 
+
+def write_object_062_annual(rows, outpath: Path):
+    """Aggregate object-code 062 budget to one adopted-snapshot amount per FY.
+
+    OMB's June publication tagged fiscal_year=Y contains the financial_plan_amount
+    for FY Y. The API dataset repeats/revises snapshots, so keep the latest
+    publication_date within each fiscal_year before summing.
+    """
+    if not rows:
+        return
+    required = {"fiscal_year", "publication_date", "financial_plan_amount"}
+    missing = required.difference(rows[0].keys())
+    if missing:
+        raise RuntimeError(
+            "Cannot create annual object-code 062 series; missing fields: "
+            + ", ".join(sorted(missing))
+        )
+    latest = {}
+    for row in rows:
+        year = str(row.get("fiscal_year", ""))
+        pub = str(row.get("publication_date", ""))
+        if not year or not pub:
+            continue
+        if year not in latest or pub > latest[year]:
+            latest[year] = pub
+    totals = {}
+    names = {}
+    for row in rows:
+        year = str(row.get("fiscal_year", ""))
+        if not year or str(row.get("publication_date", "")) != latest.get(year):
+            continue
+        amount = row.get("financial_plan_amount")
+        if amount in (None, ""):
+            continue
+        totals[year] = totals.get(year, 0.0) + float(amount)
+        names[year] = row.get("object_code_name", "Object code 062")
+    annual = [
+        {
+            "fiscal_year": year,
+            "object_code": "062",
+            "object_code_name": names.get(year, "Object code 062"),
+            "adopted_budget_amount_usd": round(totals[year], 2),
+            "publication_date": latest[year],
+            "measure": "adopted budget; not actual expenditure",
+        }
+        for year in sorted(totals, key=int)
+    ]
+    write_csv(outpath, annual)
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--outdir", default="scenario-2/public-data/raw", help="Output directory")
@@ -160,6 +209,30 @@ def main():
             "order": config["order"],
         }
         print(f"Saved {len(rows):,} rows -> {csv_path}", flush=True)
+
+        if name == "expense_budget_object_062":
+            annual_path = outdir / "object_062_adopted_budget_by_fy.csv"
+            write_object_062_annual(rows, annual_path)
+            manifest["datasets"][name]["annual_aggregation"] = {
+                "csv": annual_path.name,
+                "method": "latest publication_date within each fiscal_year; sum financial_plan_amount",
+                "interpretation": "Adopted budget for the fiscal year named in fiscal_year; not actual spending",
+            }
+
+        if name == "financial_plan_initiatives":
+            keywords = ("health", "medical", "insurance", "benefit", "stabilization", "medicare", "ppo", "prescription")
+            matched = [
+                row for row in rows
+                if any(word in " ".join(str(value) for value in row.values()).lower() for word in keywords)
+            ]
+            matched_path = outdir / "financial_plan_health_related_initiatives.csv"
+            write_csv(matched_path, matched)
+            manifest["datasets"][name]["keyword_extract"] = {
+                "csv": matched_path.name,
+                "rows_downloaded": len(matched),
+                "keywords": list(keywords),
+                "note": "Search aid only; review initiative descriptions and do not treat planned amounts as realized savings.",
+            }
 
     (outdir / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     print(f"Manifest written: {outdir / 'manifest.json'}")
