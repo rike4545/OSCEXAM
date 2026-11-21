@@ -26,3 +26,15 @@ The FY 2026 ACFR records a $937 million write-down of HISF receivables accrued i
 ## Interview responses
 
 The sample responses are based on the candidate's résumé, including education, Town of Riverhead service, Bristol Fish and Game financial administration, Stony Brook University Hospital forecasting, temporary New York State Comptroller work, current operations management, and the Riverhead public-budget project. They are drafts for review, not independent verification of the résumé.
+
+
+## NYC public APIs and datasets — reproducible extraction
+
+- NYC Open Data, Expense Budget (dataset `mwzb-yiwb`): https://data.cityofnewyork.us/City-Government/Expense-Budget/mwzb-yiwb — object-code budget detail. Object code 062 is extracted as a budget series only; it is not actual spending.
+- NYC Open Data, Expense Actuals (dataset `7yay-m4ae`): https://data.cityofnewyork.us/City-Government/Expense-Actuals/7yay-m4ae — agency summary actuals, rounded to thousands; not health-insurance-specific.
+- NYC Open Data, Expense Actuals By Funding Source (dataset `nrik-v7ws`): https://data.cityofnewyork.us/City-Government/Expense-Actuals-By-Funding-Source/nrik-v7ws — agency-level funding mix; not health-insurance-specific.
+- NYC Open Data, Additional Costs Allocation (dataset `u42g-qjaj`): https://data.cityofnewyork.us/City-Government/Additional-Costs-Allocation/u42g-qjaj — includes centrally allocated fringe-benefit costs; fringe benefits are broader than health insurance.
+- NYC Open Data, Financial Plan Baseline & Initiatives By Funding (dataset `e64w-ctmw`): https://data.cityofnewyork.us/City-Government/Financial-Plan-Baseline-Initiatives-By-Funding/e64w-ctmw — plan initiatives and estimates, not realized savings.
+- Retrieval code and methodology: [scenario-2/public-data/README.md](scenario-2/public-data/README.md) and [fetch_nyc_public_data.py](scenario-2/public-data/fetch_nyc_public_data.py).
+
+The public Open Data API does not by itself provide a complete actual health-insurance object-code series. Do not substitute agency-level expense totals or total fringe benefits for health-insurance actuals. Keep budget, actual expenditure, actuarial savings claims, equalization offsets, and HISF balances as separate measures.
