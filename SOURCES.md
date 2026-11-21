@@ -38,3 +38,6 @@ The sample responses are based on the candidate's résumé, including education,
 - Retrieval code and methodology: [scenario-2/public-data/README.md](scenario-2/public-data/README.md) and [fetch_nyc_public_data.py](scenario-2/public-data/fetch_nyc_public_data.py).
 
 The public Open Data API does not by itself provide a complete actual health-insurance object-code series. Do not substitute agency-level expense totals or total fringe benefits for health-insurance actuals. Keep budget, actual expenditure, actuarial savings claims, equalization offsets, and HISF balances as separate measures.
+
+
+- NYC Office of Labor Relations, *Final Report on FY 19–FY 21 Health Care Savings*, December 27, 2021: https://www.nyc.gov/assets/olr/downloads/pdf/collectivebargaining/savings-report-12-27-21.pdf. OLR's self-reported result is $1.217B gross, less $59M above the FY2021 cap, or $1.158B credited toward the $1.1B cumulative target. The report's HIP HMO rate component is based on budgeted-versus-final premium increases and amounts otherwise payable into HISF; it is not described as a direct claims reduction. The report separately excludes the proposed Medicare Advantage savings from the agreement target.
