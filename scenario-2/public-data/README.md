@@ -43,3 +43,8 @@ Accordingly, the raw extracts are evidence inputs, not a pre-labeled “health s
 - Financial Plan Baseline & Initiatives: https://data.cityofnewyork.us/resource/e64w-ctmw.json
 
 The retrieval script also saves each endpoint's current metadata, which should be treated as the schema record for that run.
+
+
+## Derived output
+
+In addition to the raw object-code 062 extract, the script writes `object_062_adopted_budget_by_fy.csv`. It keeps the latest publication date within each fiscal-year release and sums `financial_plan_amount`, which the June release uses for the fiscal year named in its `fiscal_year` tag. This is a **budget-only** series. The script also writes a keyword-filtered aid, `financial_plan_health_related_initiatives.csv`; this is a search aid and its amounts remain financial-plan estimates, not actual savings.
