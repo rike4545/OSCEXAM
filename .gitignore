@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+scenario-1/source_data.xlsx
+scenario-1/fringe_benefits_analysis.xlsx
